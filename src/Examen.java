@@ -10,4 +10,14 @@ public class Examen {
         }
         return r == num;
     }
+    public void printFirstPerfectNumbers(int quantityPerfects){
+        int countPerfects=0;
+        for (int num = 2;countPerfects < quantityPerfects;num++ ){
+            if (isPerfect(num)){
+                System.out.println(num);
+                countPerfects++;
+            }
+
+        }
+    }
 }
