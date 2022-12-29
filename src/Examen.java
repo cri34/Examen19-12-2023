@@ -20,4 +20,38 @@ public class Examen {
 
         }
     }
+    public Boolean matrizValid(int [][] a,int [][]b){
+        final int  rowAL=a.length;
+        final int  colAL=a[0].length;
+        final int  rowBL=b.length;
+        final int  colBL=b[0].length;
+        return rowAL==colBL && rowBL==colAL;
+    }
+    public int  [][] multiplicar(int [][] a,int [][]b){
+        final int  rowAL=a.length;
+        final int  colAL=a[0].length;
+        final int  rowBL=b.length;
+        final int  colBL=b[0].length;
+         if (!matrizValid(a,b)){
+          System.out.println("matrizesInvalidas");
+          return null;
+         }
+         int [][]r=new int [rowAL][colBL];
+         for (int rowA=0;rowA < rowAL;rowA++) {
+             for (int colB = 0; colB < colBL; colB++) {
+                 for (int i = 0; i < colAL; i++) {
+                     r[rowA][colB] += a[rowA][i] * b[i][colB];
+                 }
+             }
+         }
+            return r;
+    }
+    public void printArray(int [][]array){
+        for (int i = 0;i < array.length;i++){
+            for (int k = 0;k < array[0].length;k++){
+                System.out.print(" "+array[i][k]);
+            }
+            System.out.println();
+        }
+    }
 }
