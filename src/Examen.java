@@ -54,4 +54,27 @@ public class Examen {
             System.out.println();
         }
     }
+    private boolean checkABCViewed( boolean []abcViewed){
+        for (int i=0; i < abcViewed.length;i++){
+            if (!abcViewed[i])
+                return false;
+        }
+        return true;
+    }
+    public boolean isPanagrama(String frase){
+        boolean [] abcViewed= new boolean[26];
+        String fraseLoCase = frase.toLowerCase();
+        char firstLetter='a';
+        char lastLetter='z';
+        int dif;
+        for (int i = 0 ;i < frase.length(); i++){
+            dif=fraseLoCase.charAt(i)-firstLetter;
+            if (fraseLoCase.charAt(i) < firstLetter || fraseLoCase.charAt(i) > lastLetter || abcViewed[dif])
+                continue;
+            abcViewed[dif] = true;
+        }
+        return checkABCViewed(abcViewed);
+    }
+
+
 }

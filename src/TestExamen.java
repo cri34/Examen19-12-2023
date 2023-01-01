@@ -8,6 +8,8 @@ public class TestExamen {
         e.printArray(e.multiplicar(a,b));
         NumerosRomanos nr = new NumerosRomanos();
         System.out.println(nr.convertRomanNumberToDecimalNumber("MDCLVI"));
+        String frase="Watch “Jeopardy!”, Alex Trebek’s fun TV quiz game.";
+        System.out.println(e.isPanagrama(frase));
 
     }
 }
